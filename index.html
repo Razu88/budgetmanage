@@ -1,29 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Income and Expenses</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Financial Report</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Income and Expenses</h1>
-    <div class="form">
-      <div class="form-group">
-        <label for="income">Income:</label>
-        <input type="number" id="income" name="income">
-      </div>
-      <div class="form-group">
-        <label for="expenses">Expenses:</label>
-        <input type="number" id="expenses" name="expenses">
-      </div>
-      <button id="submit-btn">Submit</button>
-    </div>
-    <div class="chart">
-      <div class="income-bar"></div>
-      <div class="expenses-bar"></div>
-    </div>
+<h1>Financial Report</h1>
+<div id="form">
+  <label for="revenue">Revenue:</label>
+  <input type="text" id="revenue">
+  <label for="expenses">Expenses:</label>
+  <input type="text" id="expenses">
+  <button onclick="updateReport()">Update</button>
+</div>
+<div id="report">
+  <h2>Bar Graph</h2>
+  <div id="chart-container">
+    <canvas id="chart"></canvas>
   </div>
-  <script src="script.js"></script>
+  <table>
+    <tr>
+      <th>Category</th>
+      <th>Amount</th>
+    </tr>
+    <tr>
+      <td>Revenue</td>
+      <td id="revenue-amount">$0.00</td>
+    </tr>
+    <tr>
+      <td>Expenses</td>
+      <td id="expenses-amount">$0.00</td>
+    </tr>
+    <tr>
+      <td>Profit</td>
+      <td id="profit-amount">$0.00</td>
+    </tr>
+  </table>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
